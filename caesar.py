@@ -3,11 +3,11 @@
 
 import pyperclip
 
-message = "this is a secret message"
+message = raw_input('Please enter a message: ')
 
 key = 13
 
-mode = 'encrpyt'
+mode = 'encrypt'
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
@@ -19,7 +19,7 @@ for symbols in message:
     if symbols in LETTERS:
         # get the encrupted number
         num = LETTERS.find(symbols)
-        if mode == 'encrpyt':
+        if mode == 'encrypt':
             num = num + key
         elif mode == 'decrypt':
             num = num - key
