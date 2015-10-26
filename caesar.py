@@ -5,9 +5,9 @@ import pyperclip
 
 message = raw_input('Please enter a message: ')
 
-key = 13
+key = input('How many to move by: ')
 
-mode = 'encrypt'
+mode = raw_input('encrypt or decrypt: ')
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
