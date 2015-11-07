@@ -1,16 +1,27 @@
-class scene(object):
+from sys import exit
+from random import randint
+
+class Scene(object):
 
     def enter(self):
-        pass
-
+        print "This is not configured yet"
+        exit(1)
 
 class Engine(object):
 
-    def __init__(self,scene_map):
-        pass
+    def __init__(self, scene_map):
+        self.scene_map = scene_map
 
     def play(self):
-        pass
+        current_scene = self.scene_map.opening_scene()
+        last_scene = self.scene_map.next_scene('finished')
+
+        while current_scene != last_scene:
+            next_scene_name = current_scene.enter()
+            current_scene = self.scene_map.next_scene(next_scene_name)
+
+        current_scene.enter()
+
 
 class Death(Scene):
 
