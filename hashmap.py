@@ -22,7 +22,7 @@ def get_slot(aMap, key, default=None):
     """returns the index, key and value of a slot found in the bucket
     Returns -1, key and default when non found
     """
-    bucket = get_bucket[aMap, key]
+    bucket = get_bucket(aMap, key)
 
     for i, kv in enumerate(bucket):
         k, v = kv
